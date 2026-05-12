@@ -149,10 +149,46 @@ A lightweight, fire-and-forget telemetry system tracking learning metrics:
 
 ### Directory Structure
 
-Gamified-Ai-learning-website-LEVELUP-AI/│├── app.py                      # Flask entry point (routes + startup)├── gal_config.js               # Shared frontend config (API key, base URL)├── requirements.txt            # Python dependencies├── .env                        # Environment variables (gitignored)│├── core/                       # Backend core modules│   ├── config.py               # Env vars, MongoDB, Firebase setup│   ├── db.py                   # DB helpers (JSON + MongoDB dual-mode)│   └── firebase.py             # Firebase Realtime Database helpers│├── api/                        # Flask Blueprints (one file per route group)│   ├── auth.py                 # Account creation and session management│   ├── profile.py              # Profile and stat updates│   ├── progress.py             # Level completion tracking│   ├── leaderboard.py          # Global ranking engine│   ├── study.py                # Study module management│   ├── team.py                 # Team creation and leaderboards│   └── ai_chat.py              # Google Gemini proxy route│├── static/│   └── js/│       ├── gal-telemetry.js    # Async fire-and-forget event tracking│       └── gal-charts.js       # Canvas chart library (Radar, Line, Bar, Ring)│├── data/│   └── db.json                 # Local JSON database (auto-created for dev)│└── pages/                      # HTML game pages (served directly by Flask)├── index.html              # Landing / auth page├── dashboard.html          # Player dashboard├── hauntedmansion.html     # Game Module├── codered.html            # Game Module├── shadowquery.html        # Game Module├── treasurehunt.html       # Game Module└── gemini-chat.html        # AI Chat interface
-### System Interaction Diagram
-
 ```text
+Gamified-Ai-learning-website-LEVELUP-AI/
+│
+├── app.py                      # Flask entry point (routes + startup)
+├── gal_config.js               # Shared frontend config (API key, base URL)
+├── requirements.txt            # Python dependencies
+├── .env                        # Environment variables (gitignored)
+│
+├── core/                       # Backend core modules
+│   ├── config.py               # Env vars, MongoDB, Firebase setup
+│   ├── db.py                   # DB helpers (JSON + MongoDB dual-mode)
+│   └── firebase.py             # Firebase Realtime Database helpers
+│
+├── api/                        # Flask Blueprints (one file per route group)
+│   ├── auth.py                 # Account creation and session management
+│   ├── profile.py              # Profile and stat updates
+│   ├── progress.py             # Level completion tracking
+│   ├── leaderboard.py          # Global ranking engine
+│   ├── study.py                # Study module management
+│   ├── team.py                 # Team creation and leaderboards
+│   └── ai_chat.py              # Google Gemini proxy route
+│
+├── static/
+│   └── js/
+│       ├── gal-telemetry.js    # Async fire-and-forget event tracking
+│       └── gal-charts.js       # Canvas chart library (Radar, Line, Bar, Ring)
+│
+├── data/
+│   └── db.json                 # Local JSON database (auto-created for dev)
+│
+└── pages/                      # HTML game pages (served directly by Flask)
+    ├── index.html              # Landing / auth page
+    ├── dashboard.html          # Player dashboard
+    ├── hauntedmansion.html     # Game Module
+    ├── codered.html            # Game Module
+    ├── shadowquery.html        # Game Module
+    ├── treasurehunt.html       # Game Module
+    └── gemini-chat.html        # AI Chat interface
+
+###System Interaction Diagram
 ┌──────────────────────────────────────────────────────────────────────────┐
 │                             GAL Platform                                 │
 │                                                                          │
@@ -175,4 +211,3 @@ Gamified-Ai-learning-website-LEVELUP-AI/│├── app.py                     
 │                        └──────────────────────────────────────────────┘   │
 │                                                                          │
 └──────────────────────────────────────────────────────────────────────────┘
-🛠 Tech StackLayerTechnologyPurposeBackendPython 3.12 + Flask 3.xCore API routing and server-side logicDatabase (Dev)Local JSON File (db.json)Zero-config local developmentDatabase (Prod)MongoDB Atlas (PyMongo)Scalable production data storageRealtimeFirebase Realtime DBLive state synchronization (Optional)AIGoogle Gemini 2.0 FlashAI Tutoring via /api/ai_chatFrontendVanilla HTML/CSS/JSLightning-fast rendering, zero build stepsData VizCustom Canvas APINative rendering for Radar, Line, Bar, and Ring charts
