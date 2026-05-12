@@ -150,10 +150,8 @@ Gamified-Ai-learning-website-LEVELUP-AI/
 | **Backend** | Python 3.12 + Flask 3.x | Core API routing and server-side logic |
 | **Database (Dev)** | Local JSON File (`db.json`) | Zero-config local development |
 | **Database (Prod)**| MongoDB Atlas (PyMongo) | Scalable production data storage |
-| **Realtime** | Firebase Realtime DB | Live state synchronization (Optional) |
 | **AI** | Google Gemini 2.0 Flash | AI Tutoring via `/api/ai_chat` |
 | **Frontend** | Vanilla HTML/CSS/JS | Lightning-fast rendering, zero build steps |
-| **Data Viz** | Custom Canvas API | Native rendering for Radar, Line, Bar, and Ring charts |
 
 ---
 
